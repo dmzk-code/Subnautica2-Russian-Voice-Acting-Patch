@@ -63,6 +63,16 @@ RussianVoicePatch/backups/<дата-время>/
 powershell -ExecutionPolicy Bypass -File .\RussianVoicePatch\Install-RussianVoicePatch.ps1 -PayloadRoot .\RussianVoicePatch\payload_v2 -DryRun
 ```
 
+## Частые ошибки
+
+Если PowerShell пишет, что `Install-RussianVoicePatch.ps1` не существует, значит архив распакован не в корень игры или команда запущена не из папки с `Subnautica2.exe`.
+
+Если PowerShell пишет, что `payload_v2` не найден, проверьте имя папки внутри `RussianVoicePatch`. В старом архиве v2 payload мог быть упакован как `payload`. Для такого архива используйте:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\RussianVoicePatch\Install-RussianVoicePatch.ps1 -PayloadRoot .\RussianVoicePatch\payload
+```
+
 ## После обновления игры
 
 Steam может вернуть оригинальные `.bank` файлы после обновления или проверки целостности. В этом случае просто повторите установку:
